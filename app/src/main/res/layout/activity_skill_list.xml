@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray14"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/activity_title"
+        layout="@layout/include_title" />
+
+
+    <ScrollView
+        android:layout_below="@id/activity_title"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:paddingBottom="60dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/et_search"
+                style="@style/et_style_search"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left|center_vertical"
+                android:hint="@string/sousuoninnengtigongdefuwu"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/niyixuanze"
+                android:textColor="@color/blue8"
+                android:textSize="@dimen/textsize_3" />
+
+            <ListView
+                android:id="@+id/list_view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:divider="@null"
+                android:dividerHeight="5dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:scrollbars="none" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/xuanzenidejineng"
+                android:textColor="@color/blue8"
+                android:textSize="@dimen/textsize_3" />
+
+            <ListView
+                android:id="@+id/list_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:divider="@null"
+                android:dividerHeight="5dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/ll_bottom"
+        layout="@layout/include_bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

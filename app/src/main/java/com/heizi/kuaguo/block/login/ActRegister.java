@@ -2,7 +2,7 @@ package com.heizi.kuaguo.block.login;
 
 import android.content.Intent;
 import android.graphics.Paint;
-import android.os.CountDownTimer;
+import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -15,24 +15,23 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.heizi.mycommon.utils.LoadingD;
-import com.heizi.mycommon.utils.SharePreferenceUtil;
-import com.heizi.mycommon.utils.Utils;
-import com.heizi.mycommon.utils.UtilsLog;
-import com.heizi.mylibrary.callback.IResponseCallback;
-import com.heizi.mylibrary.model.DataSourceModel;
-import com.heizi.mylibrary.model.ErrorModel;
-import com.heizi.mylibrary.retrofit2.ParseObjectProtocol;
-import com.heizi.mylibrary.retrofit2.ParseStringProtocol;
 import com.heizi.kuaguo.Constants;
 import com.heizi.kuaguo.MyApplication;
 import com.heizi.kuaguo.R;
 import com.heizi.kuaguo.UserModel;
 import com.heizi.kuaguo.activity.BaseSwipeBackCompatActivity;
 import com.heizi.kuaguo.activity.MainTabsActivity;
+import com.heizi.kuaguo.block.my.ActivityBasicInfo;
 import com.heizi.kuaguo.utils.RefreshUtils;
-
-import org.xutils.common.util.MD5;
+import com.heizi.kuaguo.utils.VisibleEnum;
+import com.heizi.mycommon.utils.LoadingD;
+import com.heizi.mycommon.utils.SharePreferenceUtil;
+import com.heizi.mycommon.utils.Utils;
+import com.heizi.mylibrary.callback.IResponseCallback;
+import com.heizi.mylibrary.model.DataSourceModel;
+import com.heizi.mylibrary.model.ErrorModel;
+import com.heizi.mylibrary.retrofit2.ParseObjectProtocol;
+import com.heizi.mylibrary.retrofit2.ParseStringProtocol;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,15 +45,15 @@ import butterknife.OnClick;
  */
 public class ActRegister extends BaseSwipeBackCompatActivity implements OnClickListener,
         Constants {
-    private Button btn_ok, btn_get_code;
-    private EditText et_phone, et_verification_code, et_pwd, et_confirm, et_invite,
-            inviteEditText;
+    private Button btn_ok;
+    //            btn_get_code;
+    private EditText et_email, et_user, et_pwd;
     private CheckBox cb_agree;
     private TextView tv_title, tv_xieyi;
     private long leftTime = 0;
     private long closeTime = 0L;
     private SharePreferenceUtil su;
-    private MyCount mc;
+    //    private MyCount mc;
     private ParseStringProtocol gcp;// 获取验证码接口
     private IResponseCallback<DataSourceModel<String>> gcpcb;
     //注册接口
@@ -88,9 +87,9 @@ public class ActRegister extends BaseSwipeBackCompatActivity implements OnClickL
             }
         });
         btn_ok = (Button) findViewById(R.id.btn_ok);
-        btn_get_code = (Button) findViewById(R.id.btn_get_code);
-        et_phone = (EditText) findViewById(R.id.et_phone);
-        et_phone.addTextChangedListener(new TextWatcher() {
+//        btn_get_code = (Button) findViewById(R.id.btn_get_code);
+        et_email = (EditText) findViewById(R.id.et_email);
+        et_email.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
@@ -118,15 +117,13 @@ public class ActRegister extends BaseSwipeBackCompatActivity implements OnClickL
 //				}
             }
         });
-        et_verification_code = (EditText)
-                findViewById(R.id.et_verification_code);
+        et_user = (EditText)
+                findViewById(R.id.et_user);
         et_pwd = (EditText) findViewById(R.id.et_pwd);
         tv_title = (TextView) findViewById(R.id.tv_title);
         tv_title.setText("注册");
         tv_xieyi = (TextView) findViewById(R.id.tv_xieyi);
         tv_xieyi.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
-
-        et_invite = (EditText) findViewById(R.id.et_invite);
 
         mHandler = new Handler(this.getMainLooper()) {
             public void handleMessage(android.os.Message msg) {
@@ -177,76 +174,80 @@ public class ActRegister extends BaseSwipeBackCompatActivity implements OnClickL
                 Utils.toastShow(ActRegister.this, errorModel.getMsg());
             }
         };
-
-
-        gcp = new ParseStringProtocol(this, SERVER_URL_NEW + SENDSMS);
-        gcpcb = new IResponseCallback<DataSourceModel<String>>() {
-
-            @Override
-            public void onSuccess(DataSourceModel<String> t) {
-                // TODO Auto-generated method stub
-                LoadingD.hideDialog();
-                Utils.toastShow(ActRegister.this, "发送成功");
-                if (mc != null)
-                    mc.cancel();
-                mc = new MyCount(60 * 1000, 1000); // 第一参数是总的时间，第二个是间隔时间 都是毫秒为单位
-                mc.start();
-            }
-
-            @Override
-            public void onFailure(ErrorModel errorModel) {
-                // TODO Auto-generated method stub
-                LoadingD.hideDialog();
-                UtilsLog.d("====", "code==" + errorModel.getCode());
-                Utils.toastShow(ActRegister.this, "" + errorModel.getMsg());
-            }
-
-            @Override
-            public void onStart() {
-                // TODO Auto-generated method stub
-                LoadingD.showDialog(ActRegister.this);
-            }
-        };
     }
+
+
+//        gcp = new ParseStringProtocol(this, SERVER_URL_NEW + SENDSMS);
+//        gcpcb = new IResponseCallback<DataSourceModel<String>>() {
+//
+//            @Override
+//            public void onSuccess(DataSourceModel<String> t) {
+//                // TODO Auto-generated method stub
+//                LoadingD.hideDialog();
+//                Utils.toastShow(ActRegister.this, "发送成功");
+//                if (mc != null)
+//                    mc.cancel();
+//                mc = new MyCount(60 * 1000, 1000); // 第一参数是总的时间，第二个是间隔时间 都是毫秒为单位
+//                mc.start();
+//            }
+//
+//            @Override
+//            public void onFailure(ErrorModel errorModel) {
+//                // TODO Auto-generated method stub
+//                LoadingD.hideDialog();
+//                UtilsLog.d("====", "code==" + errorModel.getCode());
+//                Utils.toastShow(ActRegister.this, "" + errorModel.getMsg());
+//            }
+//
+//            @Override
+//            public void onStart() {
+//                // TODO Auto-generated method stub
+//                LoadingD.showDialog(ActRegister.this);
+//            }
+//        };
+//    }
 
     // 注册
     private void initRegister() {
-        Map<String, String> maps = new HashMap<String, String>();
-        maps.put("mobile", et_phone.getText().toString());
-        maps.put("password", MD5.md5(et_pwd.getText().toString()));
-        maps.put("verifycode", et_verification_code.getText().toString());
-        maps.put("nickname", "");
-        maps.put("invitation", et_invite.getText().toString());
-        rp.postData(maps, rpcb);
+//        Map<String, String> maps = new HashMap<String, String>();
+//        maps.put("mobile", et_phone.getText().toString());
+//        maps.put("password", MD5.md5(et_pwd.getText().toString()));
+//        maps.put("verifycode", et_verification_code.getText().toString());
+//        maps.put("nickname", "");
+//        maps.put("invitation", et_invite.getText().toString());
+//        rp.postData(maps, rpcb);
     }
 
     // 获取验证码
     private void getCode() {
         Map<String, String> maps = new HashMap<String, String>();
-        maps.put("mobile", et_phone.getText().toString());
+        maps.put("mobile", et_email.getText().toString());
         gcp.postData(maps, gcpcb);
     }
 
 
-    @OnClick({R.id.btn_ok, R.id.btn_get_code, R.id.btn_back, R.id.tv_xieyi})
+    @OnClick({R.id.btn_ok, R.id.btn_back, R.id.tv_xieyi})
     @Override
     public void onClick(View arg0) {
         // TODO Auto-generated method stub
         switch (arg0.getId()) {
             case R.id.btn_ok:
-                if (checkData()) {
-                    initRegister();
-                }
+//                if (checkData()) {
+//                    initRegister();
+//                }
+                Bundle bundle = new Bundle();
+                bundle.putInt("type", VisibleEnum.NEXT.getCode());
+                startActivity(ActRegister.this, ActivityBasicInfo.class, bundle);
 
                 break;
-            case R.id.btn_get_code:
-                if (Utils.isNull(et_phone.getText().toString())
-                        || !Utils.checkIsCellphone(et_phone.getText().toString())) {
-                    Utils.toastShow(this, "请输入正确的手机号码!");
-                    return;
-                }
-                getCode();
-                break;
+//            case btn_get_code:
+//                if (Utils.isNull(et_phone.getText().toString())
+//                        || !Utils.checkIsCellphone(et_phone.getText().toString())) {
+//                    Utils.toastShow(this, "请输入正确的手机号码!");
+//                    return;
+//                }
+//                getCode();
+//                break;
             case R.id.btn_back:
                 finish();
 
@@ -262,75 +263,75 @@ public class ActRegister extends BaseSwipeBackCompatActivity implements OnClickL
         }
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        //恢复验证码相关状态
-        leftTime = su.getRegisterLeftTiming();
-        closeTime = su.getRegisterTime();
-        if (leftTime < 3)
-            return;
-
-        long curT = System.currentTimeMillis();
-        if (closeTime != 0 && curT - closeTime >= leftTime * 1000) {
-
-        } else {
-            mc = new MyCount(leftTime * 1000 - (curT - closeTime), 1000);
-            mc.start();
-        }
-
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-//		if (leftTime < 3) {
-        su.setRegisterLeftTiming(0);
-        su.setRegisterTime(0);
-//		} else {
-//			su.setRegisterLeftTiming(leftTime);
-//			closeTime = System.currentTimeMillis();
-//			su.setRegisterTime(closeTime);
-        if (mc != null)
-            mc.cancel();
-//		}
-    }
-
-    // 倒计时
-    class MyCount extends CountDownTimer {
-        public MyCount(long millisInFuture, long countDownInterval) {
-            super(millisInFuture, countDownInterval);
-        }
-
-        @Override
-        public void onFinish() {
-            btn_get_code.setEnabled(true);
-            btn_get_code.setText("获取验证码");
-        }
-
-        @Override
-        public void onTick(long millisUntilFinished) {
-            btn_get_code.setEnabled(false);
-            btn_get_code.setText(String.format(
-                    getString(R.string.register_countdown),
-                    millisUntilFinished / 1000));
-            leftTime = millisUntilFinished / 1000;
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        //恢复验证码相关状态
+//        leftTime = su.getRegisterLeftTiming();
+//        closeTime = su.getRegisterTime();
+//        if (leftTime < 3)
+//            return;
+//
+//        long curT = System.currentTimeMillis();
+//        if (closeTime != 0 && curT - closeTime >= leftTime * 1000) {
+//
+//        } else {
+//            mc = new MyCount(leftTime * 1000 - (curT - closeTime), 1000);
+//            mc.start();
+//        }
+//
+//
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+////		if (leftTime < 3) {
+//        su.setRegisterLeftTiming(0);
+//        su.setRegisterTime(0);
+////		} else {
+////			su.setRegisterLeftTiming(leftTime);
+////			closeTime = System.currentTimeMillis();
+////			su.setRegisterTime(closeTime);
+//        if (mc != null)
+//            mc.cancel();
+////		}
+//    }
+//
+//    // 倒计时
+//    class MyCount extends CountDownTimer {
+//        public MyCount(long millisInFuture, long countDownInterval) {
+//            super(millisInFuture, countDownInterval);
+//        }
+//
+//        @Override
+//        public void onFinish() {
+//            btn_get_code.setEnabled(true);
+//            btn_get_code.setText("获取验证码");
+//        }
+//
+//        @Override
+//        public void onTick(long millisUntilFinished) {
+//            btn_get_code.setEnabled(false);
+//            btn_get_code.setText(String.format(
+//                    getString(R.string.register_countdown),
+//                    millisUntilFinished / 1000));
+//            leftTime = millisUntilFinished / 1000;
+//        }
+//    }
 
     // 验证输入信息是否正确
     private boolean checkData() {
-        if (Utils.isNull(et_phone.getText().toString())
-                || !Utils.checkIsCellphone(et_phone.getText().toString())) {
-            Utils.toastShow(this, "请输入正确的手机号!");
+        if (Utils.isNull(et_email.getText().toString())
+                || !Utils.checkIsEmail(et_email.getText().toString())) {
+            Utils.toastShow(this, getResources().getString(R.string.qingshuruzhengqueyouxiang));
             return false;
-        } else if (Utils.isNull(et_verification_code.getText().toString())) {
-            Utils.toastShow(this, "请输入正确的验证码!");
+        } else if (Utils.isNull(et_user.getText().toString())) {
+            Utils.toastShow(this, getResources().getString(R.string.qingshuruyonghuming));
             return false;
         } else if (Utils.isNull(et_pwd.getText().toString())
                 || et_pwd.getText().toString().length() < 6) {
-            Utils.toastShow(this, "请输入正确的密码!");
+            Utils.toastShow(this, getResources().getString(R.string.qingshurumima));
             return false;
         }
         return true;

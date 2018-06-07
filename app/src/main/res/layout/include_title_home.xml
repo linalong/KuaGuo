@@ -1,68 +1,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/ll_title"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:gravity="center_vertical">
-
-
-        <TextView
-            android:id="@+id/tv_local"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/shap_home_local"
-            android:drawablePadding="5dp"
-            android:drawableRight="@mipmap/iv_down"
-            android:ellipsize="end"
-            android:maxLength="7"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
-            android:singleLine="true"
-            android:text="北京"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
-
-
-        <TextView
-            android:id="@+id/tv_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/shap_home_search"
-            android:drawableLeft="@mipmap/iv_sousuo_black"
-            android:drawablePadding="5dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
-            android:singleLine="true"
-            android:text="请输入商家/分类"
-            android:textColor="@color/gray10"
-            android:textSize="14sp" />
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/blue8"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <ImageView
-            android:id="@+id/iv_saosao"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingRight="10dp"
+            android:src="@mipmap/logo" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+        <com.heizi.mycommon.view.NoticeTextView
+            android:id="@+id/nv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
             android:paddingLeft="10dp"
-            android:src="@mipmap/iv_saosao"
+            android:paddingRight="10dp"
+            android:drawableRight="@mipmap/ico_lead_news"
+            android:textColor="@color/gray17"
+            android:textSize="14sp"
             android:visibility="visible" />
 
+    </RelativeLayout>
 
-    </LinearLayout>
-
+    <View
+        android:id="@+id/v_diviling"
+        style="@style/diviling_line_fine_black" />
 
 </LinearLayout>

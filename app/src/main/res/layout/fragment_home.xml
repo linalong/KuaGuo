@@ -5,9 +5,14 @@
     android:background="@color/gray12"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/title_include"
+        layout="@layout/include_title_home"/>
+
 
     <RelativeLayout
         android:id="@+id/rl_top"
+        android:layout_below="@id/title_include"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:background="@color/red">
@@ -30,7 +35,7 @@
 
         <include
             android:id="@+id/ll_top"
-            layout="@layout/include_title_home" />
+            layout="@layout/include_search_home" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -127,36 +132,9 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-    <LinearLayout
+    <include
         android:id="@+id/ll_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/red"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/shap_home_search"
-            android:drawableLeft="@mipmap/iv_sousuo_black"
-            android:drawablePadding="5dp"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
-            android:text="请输入商家/分类"
-            android:textColor="@color/gray10"
-            android:textSize="14sp"
-            android:visibility="visible" />
-
-
-    </LinearLayout>
-
+        layout="@layout/include_search_home" />
 
 </RelativeLayout>
 

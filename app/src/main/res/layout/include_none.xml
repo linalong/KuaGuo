@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/gray2"
+        android:textSize="@dimen/textsize_3" />
+
+    <Button
+        android:id="@+id/btn_notice"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_blue_hollow"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/blue1"
+        android:textSize="@dimen/textsize_3"
+        android:visibility="visible" />
+</LinearLayout>

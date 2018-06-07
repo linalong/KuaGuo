@@ -42,7 +42,7 @@ import java.util.Map;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-import static com.heizi.kuaguo.block.home.FragmentHome.codeGetCity;
+import static com.heizi.kuaguo.block.source.FragmentSourceHome.codeGetCity;
 
 
 /**

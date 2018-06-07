@@ -94,6 +94,7 @@ public abstract class BaseScrollListFragment extends BaseFragment implements XSc
     public void onRefresh() {
         isRefresh = true;
         pageIndex = 1;
+        mScrollView.setPullLoadEnable(true);
         getData();
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">大哲扣</string>
+    <string name="app_name">拓外</string>
     <string name="hello_world">Hello world!</string>
     <string name="string_exit">再按一次退出程序~</string>
     <string name="action_settings">Settings</string>
@@ -27,9 +27,136 @@
     <string name="retrieve_pwd">输入6-20位新密码</string>
     <string name="btn_ok">确       定</string>
     <string name="btn_next">下一步</string>
+    <string name="lijidenglu">立即登录</string>
+    <string name="chanpinjieshao">一个帮助中国企业拓展海外市场的app</string>
+    <string name="qingshuruzhanghuming">请输入账户名</string>
+    <string name="qingshurudenglumima">请输入登录密码</string>
+    <string name="wangjimima">忘记密码?</string>
+    <string name="zhanghuzhuce">账户注册</string>
+    <string name="youxiang">邮&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;箱</string>
+    <string name="zhanghuming2">账&#160;&#160;户&#160;&#160;名</string>
+    <string name="qingtianxieyouxiang">请填邮箱</string>
+    <string name="qingtianxiezhanghuming">请填写账户名</string>
+    <string name="qingtianxiemima">请填写密码</string>
+    <string name="denglumima">登录密码</string>
+    <string name="kuaijiedenglu">快捷登录</string>
+    <string name="lijizhuce">立即注册</string>
+    <string name="tongyi">同意</string>
+    <string name="xieyi">《平台劳务服务协议》</string>
+
 
     <string name="new_friends">新朋友</string>
     <string name="contact">通讯录</string>
     <string name="release_match">发布匹配</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="weikaitong">您还没有开通钱包功能</string>
+    <string name="lijikaitong">立即开通</string>
+    <string name="zhukaitong">注：开通钱包前需完成邮箱绑定认证</string>
+    <string name="lijirenzheng">立即完成认证</string>
+    <string name="yanzhengxinxi">验证信息</string>
+    <string name="shuruyanzhengma">输入验证码</string>
+    <string name="fasongyanzhengma">发送验证邮件</string>
+    <string name="yanzhengxinxijieshou">验证信息接收邮箱：</string>
+    <string name="qingshuruzhengqueyouxiang">请输入正确邮箱</string>
+    <string name="qingshuruyonghuming">请输入用户名</string>
+    <string name="qingshurumima">请输入密码</string>
+    <string name="liangcibuyizhi">两次密码不一致，请重新输入</string>
+    <string name="shezhizhifumima">设置支付密码</string>
+    <string name="xiugaizhifumima">修改支付密码</string>
+    <string name="tijiaoshezhi">提交设置</string>
+    <string name="qingshurujiumima">请输入旧密码</string>
+    <string name="qingshurushezhimima">请输入设置的密码</string>
+
+    <string name="touxiang">头像</string>
+    <string name="zhanghuming">账户名</string>
+    <string name="dianziyouxiang">电子邮箱</string>
+    <string name="suoshudiqu">所属地区</string>
+    <string name="yuyanqingkuang">语言情况</string>
+    <string name="jinengshezhi">技能设置</string>
+    <string name="shuxihangye">熟悉行业</string>
+    <string name="xiangguanzhengzhao">相关证照</string>
+    <string name="jibenqingkuang">基本情况</string>
+    <string name="xiangguanxuqiu">相关需求</string>
+    <string name="xinchoufanwei">薪酬范围</string>
+    <string name="baocunshezhi">保存设置</string>
+    <string name="zuiduowugemiaoshu">您可以选择最多5个与您相近的描述</string>
+    <string name="xiayibu">下一步</string>
+    <string name="tiaoguozhihouluru">跳过以后录入</string>
+    <string name="tianjiazhengzhao">添加证照信息</string>
+    <string name="tianjiazhengzhao2">+添加你的证照信息</string>
+    <string name="luruzhengzhao">录入证照</string>
+    <string name="zanwuzhengzhao">暂无相关证照</string>
+    <string name="shanchu">删除</string>
+    <string name="tianjia">+添加</string>
+    <string name="luruyuyan">录入语言</string>
+    <string name="tianjiayuyan">添加语言</string>
+    <string name="zanwuyuyan">暂无语言记录</string>
+    <string name="baocun">保存</string>
+    <string name="yiban">一般</string>
+    <string name="lianghao">良好</string>
+    <string name="shulian">熟练</string>
+    <string name="jingtong">精通</string>
+    <string name="yuyan">语言</string>
+    <string name="yuyandengji">语言等级</string>
+    <string name="luruhangye">录入行业</string>
+    <string name="zanwuhangyejilu">暂无行业记录</string>
+    <string name="tianjiahangye">添加行业</string>
+    <string name="tianjiahangyejilu">+添加你的行业记录</string>
+    <string name="zuiduoluruhangye">您可以选择最多5个您熟悉的行业</string>
+    <string name="suoshuhangye">所属行业</string>
+    <string name="gongzuoshijian">工作时间</string>
+    <string name="gongzuoxingzhi">工作性质</string>
+    <string name="gongzuojingli">工作经历</string>
+    <string name="dao">到</string>
+    <string name="xian1000ziyinei">限1000字以内</string>
+    <string name="jianzhi">兼职</string>
+    <string name="quanzhi">全职</string>
+    <string name="chuangye">创业</string>
+
+    <string name="zhengshu">证&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;书</string>
+    <string name="chengji">成&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;绩</string>
+    <string name="huodeshijian">获得时间</string>
+    <string name="zhengshuzhaopian">证书照片</string>
+    <string name="qingshuruchengji">请输入成绩</string>
+
+
+    <string name="jibenziliao">基本资料</string>
+    <string name="suozaidiqu">所在地区</string>
+    <string name="zidongdingwei">自动定位</string>
+    <string name="jutixuqiu">具体需求</string>
+    <string name="jitixuqiu50">我有具体需求，限50字内</string>
+    <string name="guojia">国家</string>
+    <string name="chengshi">城市</string>
+    <string name="diqu">地区</string>
+    <string name="qingshurujiage">请输入价格</string>
+    <string name="xiaoshi">小时</string>
+    <string name="shezhininmeixiaoshijiage">设置您每小时的劳动报酬，让雇主们雇佣您将需要支付的金额有个预算</string>
+
+    <string name="xuanzejineng">选择技能</string>
+    <string name="niyixuanze">你已选择%d项技能</string>
+    <string name="xuanzenidejineng">选择你的技能</string>
+    <string name="sousuoninnengtigongdefuwu">搜索您能提供的服务</string>
+    <string name="zuiduoxuanzejineng">最多可选择8个技能</string>
+
+    <string name="xuanzediqu">选择地区</string>
+    <string name="tuijian">推荐</string>
+    <string name="jiedanshu">接单数</string>
+    <string name="jiage">价格</string>
+    <string name="chazhaonixuyaodebangshou">查找你需要的帮手</string>
+    <string name="haiwaiziyuan">海外资源</string>
+
+    <string name="jinengyaoqiu">技能要求</string>
+    <string name="hangyeyaoqiu">行业要求</string>
+    <string name="tuijianqingkuang">推荐情况</string>
+    <string name="shixinfanwei">时薪范围</string>
+    <string name="quanbujineng">全部技能</string>
+    <string name="quanbuhangye">全部行业</string>
+    <string name="quanbudiqu">全部地区</string>
+    <string name="quanbujibenqingkuang">全部基本情况</string>
+    <string name="quanbu">全部</string>
+    <string name="shaixuan">筛选</string>
+    <string name="chongzhi">重置</string>
+
+
 </resources>

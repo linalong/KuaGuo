@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
-        android:background="@color/red"
+        android:background="@color/blue8"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
@@ -21,11 +21,11 @@
         <ImageView
             android:id="@+id/btn_close"
             android:layout_width="45dp"
-            android:layout_centerVertical="true"
             android:layout_height="45dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:visibility="invisible"
-            android:src="@mipmap/iv_close_white" />
+            android:src="@mipmap/iv_close_white"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -45,7 +45,7 @@
             android:drawablePadding="5dp"
             android:gravity="center"
             android:paddingLeft="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/gray17"
             android:textSize="14sp"
             android:visibility="gone" />
 
@@ -62,13 +62,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/tv_right"
+            android:layout_toLeftOf="@id/tv_right"
             android:drawablePadding="5dp"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text=""
-            android:textColor="@color/white"
+            android:textColor="@color/gray17"
             android:textSize="14sp"
             android:visibility="gone" />
 

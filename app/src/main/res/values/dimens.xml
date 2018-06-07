@@ -20,5 +20,11 @@
     <dimen name="textsize_2">12sp</dimen>
     <dimen name="textsize_1">10sp</dimen>
 
+    <dimen name="textsize_19">19sp</dimen>
+    <dimen name="textsize_17">17sp</dimen>
+    <dimen name="textsize_15">15sp</dimen>
+    <dimen name="textsize_13">13sp</dimen>
+    <dimen name="textsize_11">11sp</dimen>
+
 
 </resources>

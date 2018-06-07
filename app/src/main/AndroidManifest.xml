@@ -67,6 +67,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/MainTheme">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -79,12 +84,88 @@
             android:name="com.heizi.kuaguo.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
+
+        <!-- 我的钱包 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityMyWallet"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- 信息验证 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityEmailVerify"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 支付密码 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityPayPwd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 基本信息 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityBasicTagList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 语言列表 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityLanguageList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 添加语言 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityAddLanguage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 行业列表 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityIndustryList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 添加行业 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityAddIndustry"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 证照列表 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityCertifiList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 添加证照 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityAddCertifi"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 基本资料 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivityBasicInfo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- 技能选择 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.my.ActivitySkillList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 筛选 -->
+        <activity
+            android:name="com.heizi.kuaguo.block.source.ActivityShaiXuan"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <!-- 城市搜索 -->
         <activity
@@ -212,7 +293,14 @@
         <activity
             android:name="com.heizi.kuaguo.block.login.ActLogin"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.heizi.kuaguo.block.login.ActLoginHome"
             android:screenOrientation="portrait"

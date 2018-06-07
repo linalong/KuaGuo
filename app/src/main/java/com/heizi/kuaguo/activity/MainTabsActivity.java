@@ -11,17 +11,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import com.heizi.kuaguo.Constants;
+import com.heizi.kuaguo.MyApplication;
+import com.heizi.kuaguo.R;
+import com.heizi.kuaguo.block.my.FragmentMy;
+import com.heizi.kuaguo.block.source.FragmentSourceHome;
 import com.heizi.mycommon.adapter.CommonFragmentPagerAdapter;
 import com.heizi.mycommon.utils.Utils;
 import com.heizi.mycommon.view.NoScrollViewPager;
 import com.heizi.mycommon.view.NoticeTextView;
-import com.heizi.kuaguo.Constants;
-import com.heizi.kuaguo.MyApplication;
-import com.heizi.kuaguo.R;
-import com.heizi.kuaguo.block.home.FragmentHome;
-import com.heizi.kuaguo.block.login.ActLogin;
-import com.heizi.kuaguo.block.maidan.ActivityScanCode;
-import com.heizi.kuaguo.block.my.FragmentMy;
 import com.umeng.socialize.UMShareAPI;
 
 import java.util.ArrayList;
@@ -39,7 +37,7 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
     private static MainTabsActivity instance;
     public FragmentManager manager;
     private long time;
-    @InjectViews({R.id.tabs_guide1, R.id.tabs_guide2, R.id.tabs_guide3})
+    @InjectViews({R.id.tabs_guide1, R.id.tabs_guide2, R.id.tabs_guide3, R.id.tabs_guide4, R.id.tabs_guide5})
     public List<NoticeTextView> rbtns;
 
     @InjectView(R.id.vp_main)
@@ -72,7 +70,10 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
 
 
         fragments = new ArrayList<Fragment>() {{
-            add(new FragmentHome());
+            add(new FragmentSourceHome());
+            add(new FragmentMy());
+            add(new FragmentMy());
+            add(new FragmentMy());
             add(new FragmentMy());
         }};
 
@@ -105,8 +106,8 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
 
 
     private void changeTabState(View v) {
-        int b = R.color.red;
-        int g = R.color.black1;
+        int b = R.color.blue8;
+        int g = R.color.blue9;
 
 
         rbtns.get(0).setTextColor(v.getId() == R.id.tabs_guide1 ? getResources()
@@ -115,6 +116,11 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
                 .getColor(b) : getResources().getColor(g));
         rbtns.get(2).setTextColor(v.getId() == R.id.tabs_guide3 ? getResources()
                 .getColor(b) : getResources().getColor(g));
+        rbtns.get(3).setTextColor(v.getId() == R.id.tabs_guide4 ? getResources()
+                .getColor(b) : getResources().getColor(g));
+        rbtns.get(4).setTextColor(v.getId() == R.id.tabs_guide5 ? getResources()
+                .getColor(b) : getResources().getColor(g));
+
 
         float alpha = 1;
         float alpha6 = 0.8f;
@@ -122,11 +128,15 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
         rbtns.get(0).setAlpha(v.getId() == R.id.tabs_guide1 ? alpha : alpha6);
         rbtns.get(1).setAlpha(v.getId() == R.id.tabs_guide2 ? alpha : alpha6);
         rbtns.get(2).setAlpha(v.getId() == R.id.tabs_guide3 ? alpha : alpha6);
+        rbtns.get(3).setAlpha(v.getId() == R.id.tabs_guide4 ? alpha : alpha6);
+        rbtns.get(4).setAlpha(v.getId() == R.id.tabs_guide5 ? alpha : alpha6);
 
         // 设置文字显示
-        rbtns.get(0).setText(v.getId() == R.id.tabs_guide1 ? "首页" : "首页");
-        rbtns.get(1).setText(v.getId() == R.id.tabs_guide2 ? "买单" : "买单");
-        rbtns.get(2).setText(v.getId() == R.id.tabs_guide3 ? "我的" : "我的");
+        rbtns.get(0).setText(v.getId() == R.id.tabs_guide1 ? "找帮手" : "找帮手");
+        rbtns.get(1).setText(v.getId() == R.id.tabs_guide2 ? "接任务" : "接任务");
+        rbtns.get(2).setText(v.getId() == R.id.tabs_guide3 ? "我的任务" : "我的任务");
+        rbtns.get(3).setText(v.getId() == R.id.tabs_guide4 ? "合作" : "合作");
+        rbtns.get(4).setText(v.getId() == R.id.tabs_guide5 ? "我的" : "我的");
 
 
         //设置顶部距离
@@ -157,6 +167,16 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
                 getResources().getDrawable(
                         v.getId() == R.id.tabs_guide3 ? R.mipmap.home_1_07
                                 : R.mipmap.home_0_07), null, null);
+        rbtns.get(3).setCompoundDrawablesWithIntrinsicBounds(
+                null,
+                getResources().getDrawable(
+                        v.getId() == R.id.tabs_guide4 ? R.mipmap.home_1_07
+                                : R.mipmap.home_0_07), null, null);
+        rbtns.get(4).setCompoundDrawablesWithIntrinsicBounds(
+                null,
+                getResources().getDrawable(
+                        v.getId() == R.id.tabs_guide5 ? R.mipmap.home_1_09
+                                : R.mipmap.home_0_09), null, null);
 
         if (v.getId() == R.id.tabs_guide1) {
             vp_main.setCurrentItem(0);
@@ -164,37 +184,42 @@ public class MainTabsActivity extends BaseActivity implements OnClickListener,
             vp_main.setCurrentItem(1);
         } else if (v.getId() == R.id.tabs_guide3) {
             vp_main.setCurrentItem(2);
+        } else if (v.getId() == R.id.tabs_guide4) {
+            vp_main.setCurrentItem(3);
+        } else if (v.getId() == R.id.tabs_guide5) {
+            vp_main.setCurrentItem(4);
         }
 
     }
 
 
-    @OnClick({R.id.tabs_guide1, R.id.tabs_guide2, R.id.tabs_guide3})
+    @OnClick({R.id.tabs_guide1, R.id.tabs_guide2, R.id.tabs_guide3, R.id.tabs_guide4, R.id.tabs_guide5})
     public void onClick(View v) {
         // TODO Auto-generated method stub
         switch (v.getId()) {
-            case R.id.tabs_guide1:// 首页
+            case R.id.tabs_guide1:// 找帮手
                 changeTabState(v);
                 break;
-            case R.id.tabs_guide2:// 买单
-                if (application.getUserModel() == null && application.refreshUserModel() == null) {
-                    Intent intent = new Intent();
-                    intent.setClass(MainTabsActivity.this, ActLogin.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(MainTabsActivity.this, ActivityScanCode.class);
-                    startActivity(intent);
-                }
+            case R.id.tabs_guide2:// 接任务
+                changeTabState(v);
 
                 break;
-            case R.id.tabs_guide3:// 我的
-                if (application.getUserModel() == null && application.refreshUserModel() == null) {
-                    Intent intent = new Intent();
-                    intent.setClass(MainTabsActivity.this, ActLogin.class);
-                    startActivity(intent);
-                } else {
+            case R.id.tabs_guide3:// 我的任务
+                changeTabState(v);
+
+                break;
+            case R.id.tabs_guide4:// 合作
+                changeTabState(v);
+
+                break;
+            case R.id.tabs_guide5:// 我的
+//                if (application.getUserModel() == null && application.refreshUserModel() == null) {
+//                    Intent intent = new Intent();
+//                    intent.setClass(MainTabsActivity.this, ActLogin.class);
+//                    startActivity(intent);
+//                } else {
                     changeTabState(v);
-                }
+//                }
                 break;
             default:
                 break;

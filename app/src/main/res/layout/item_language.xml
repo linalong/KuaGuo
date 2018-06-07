@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.solo.library.SlideTouchView
+        android:id="@+id/mSlideTouchView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <!-- 下层布局 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_del"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/red3"
+                android:text="@string/shanchu"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_4" />
+        </LinearLayout>
+        <!-- 上层布局 -->
+        <!-- 这里设个背景颜色将下层布局遮掩 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="yase"
+                    android:textColor="@color/blue8"
+                    android:textSize="@dimen/textsize_3" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2019"
+                    android:textColor="@color/gray16"
+                    android:textSize="@dimen/textsize_2" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/btn_right" />
+        </LinearLayout>
+    </com.solo.library.SlideTouchView>
+
+
+</LinearLayout>

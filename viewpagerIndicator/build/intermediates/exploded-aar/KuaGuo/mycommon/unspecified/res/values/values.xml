@@ -10,6 +10,10 @@
     <color name="gray4">#999999</color>
     <color name="gray5">#cccccc</color>
     <color name="gray6">#b1b1b1</color>
+    <declare-styleable name="PayPsdInputView"><attr format="integer" name="maxCount"/><attr format="color" name="circleColor"/><attr format="color" name="bottomLineColor"/><attr format="dimension" name="radius"/><attr format="dimension" name="divideLineWidth"/><attr format="color" name="divideLineColor"/><attr format="dimension" name="rectAngle"/><attr format="color" name="focusedColor"/><attr format="enum" name="psdType">
+            <enum name="weChat" value="0"/>
+            <enum name="bottomLine" value="1"/>
+        </attr></declare-styleable>
     <declare-styleable name="SelectableRoundedImageView"><attr format="dimension" name="sriv_left_top_corner_radius"/><attr format="dimension" name="sriv_right_top_corner_radius"/><attr format="dimension" name="sriv_left_bottom_corner_radius"/><attr format="dimension" name="sriv_right_bottom_corner_radius"/><attr format="dimension" name="sriv_border_width"/><attr format="color" name="sriv_border_color"/><attr format="boolean" name="sriv_oval"/><attr name="android:scaleType"/></declare-styleable>
     <string name="app_name">MyCommon</string>
     <string name="connect_server_error">连接服务器超时,请稍候重试</string>

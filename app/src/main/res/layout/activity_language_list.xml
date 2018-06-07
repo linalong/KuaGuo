@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray14"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/activity_title"
+        layout="@layout/include_title" />
+
+
+    <include
+        android:id="@+id/ll_bottom"
+        layout="@layout/include_bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <com.markmao.pulltorefresh.widget.XListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@id/activity_title"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:divider="@color/gray14"
+        android:dividerHeight="1px"
+        android:scrollbars="none" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_title"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <include layout="@layout/include_none" />
+    </LinearLayout>
+
+
+</RelativeLayout>

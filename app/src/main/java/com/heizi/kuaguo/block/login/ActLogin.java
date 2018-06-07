@@ -87,7 +87,6 @@ public class ActLogin extends BaseSwipeBackCompatActivity implements OnClickList
 
     protected void initView() {
         super.initView();
-        tv_title.setText("登录");
         tv_register = (TextView) findViewById(R.id.tv_register);
         tv_register.setOnClickListener(this);
         tv_forget_pwd = (TextView) findViewById(R.id.tv_forget_pwd);
@@ -216,15 +215,16 @@ public class ActLogin extends BaseSwipeBackCompatActivity implements OnClickList
             case R.id.tv_register:
                 startActivity(new Intent(this, ActRegister.class));
                 break;
-            case R.id.tv_forget_pwd:
-                Intent intent = new Intent();
-                intent.setClass(this, ActRetrievePwd.class);
-                startActivity(intent);
-                break;
+//            case R.id.tv_forget_pwd:
+//                Intent intent = new Intent();
+//                intent.setClass(this, ActRetrievePwd.class);
+//                startActivity(intent);
+//                break;
             case R.id.btn_login:
-                if (checkData()) {
-                    login();
-                }
+                mHandler.sendEmptyMessage(MSG_TOMAIN);
+//                if (checkData()) {
+//                    login();
+//                }
 
                 //{"code":200,"userId":"298000","token":"i/x9E9ir59nQNIcjyDIFy3BmeaL655Pwn3bjilMn4KcCwepZ9lpI7hk1ULMMXd2z6a8MPlAkjr/l3bQmU6U3cA=="}
 //                connect("i/x9E9ir59nQNIcjyDIFy3BmeaL655Pwn3bjilMn4KcCwepZ9lpI7hk1ULMMXd2z6a8MPlAkjr/l3bQmU6U3cA==");

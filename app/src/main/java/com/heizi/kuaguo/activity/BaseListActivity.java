@@ -20,7 +20,6 @@ import java.util.Locale;
 
 public abstract class BaseListActivity extends BaseSwipeBackCompatActivity implements XListView.IXListViewListener {
 
-
     protected XListView mListView;
 
     protected int pageIndex = 1, pageSize = 10;

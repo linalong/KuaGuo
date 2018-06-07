@@ -9,6 +9,14 @@ import android.os.Environment;
  */
 public interface Constants extends com.heizi.mycommon.Constants {
 
+    public static String FOLDER_ROOT = Environment
+            .getExternalStorageDirectory().getPath() + "/kuaguo/";
+    public static final boolean DEBUG = true;
+
+    public static String FOLDER_EXCEPTION = FOLDER_ROOT + "exception_log/";
+    public static String FOLDER_IMAGE = FOLDER_ROOT + "image/";
+    public static final int START_ACTIVITY_Get_PIC = 20002;
+
     /**
      * 正式环境接口
      */

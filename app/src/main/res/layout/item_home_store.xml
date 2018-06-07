@@ -10,96 +10,121 @@
     android:paddingRight="10dp"
     android:paddingTop="10dp">
 
-    <ImageView
-        android:id="@+id/iv_store"
-        android:layout_width="160dp"
-        android:layout_height="100dp"
-        android:layout_marginRight="10dp"
-        android:visibility="visible" />
-
-    <LinearLayout
+    <com.heizi.mycommon.view.DragView
+        android:id="@+id/drag_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-
+        android:layout_height="100dp">
+        <!-- 下层布局 -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <RatingBar
-                android:id="@+id/rb_star"
-                style="@style/stu_ratingBar"
+            <Button
+                android:id="@+id/btn_del"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:rating="4"
-                android:stepSize="1" />
-
-            <TextView
-                android:id="@+id/tv_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="4.6分"
-                android:textColor="@color/yellow1"
-                android:textSize="14sp" />
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:background="@android:color/holo_red_light"
+                android:text="删除" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_zhekou"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="@color/red"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
+        <!-- 上层布局 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:layout_height="100dp"
+            android:background="#fff"><!-- 这里设个背景颜色将下层布局遮掩 -->
+            <ImageView
+                android:id="@+id/iv_store"
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/tv_commit"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/gray10"
-                android:textSize="14sp" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_distance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/gray10"
-                android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/rb_star"
+                        style="@style/stu_ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="4"
+                        android:stepSize="1" />
+
+                    <TextView
+                        android:id="@+id/tv_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="4.6分"
+                        android:textColor="@color/yellow1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_zhekou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/red"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_commit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/gray10"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/gray10"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
+    </com.heizi.mycommon.view.DragView>
 
 
-    </LinearLayout>
 </LinearLayout>

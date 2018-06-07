@@ -6,22 +6,23 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.heizi.kuaguo.R;
+import com.heizi.kuaguo.activity.BaseSwipeBackCompatActivity;
+import com.heizi.kuaguo.utils.RefreshUtils;
+import com.heizi.kuaguo.utils.SelectPhotoUtils;
+import com.heizi.kuaguo.utils.VisibleEnum;
 import com.heizi.mycommon.utils.ImageFactory;
 import com.heizi.mycommon.utils.Utils;
 import com.heizi.mylibrary.callback.IResponseCallback;
 import com.heizi.mylibrary.model.DataSourceModel;
 import com.heizi.mylibrary.model.ErrorModel;
 import com.heizi.mylibrary.retrofit2.ParseStringProtocol;
-import com.heizi.kuaguo.R;
-import com.heizi.kuaguo.activity.BaseSwipeBackCompatActivity;
-import com.heizi.kuaguo.utils.RefreshUtils;
-import com.heizi.kuaguo.utils.SelectPhotoUtils;
 
 import net.tsz.afinal.FinalHttp;
 import net.tsz.afinal.http.AjaxCallBack;
@@ -32,8 +33,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -47,8 +46,32 @@ public class ActivityUserInfo extends BaseSwipeBackCompatActivity implements Vie
 
     @InjectView(R.id.iv_avatar)
     ImageView iv_avatar;
-    @InjectView(R.id.et_name)
-    TextView et_name;
+    @InjectView(R.id.tv_name)
+    TextView tv_name;
+
+    @InjectView(R.id.ll_1)
+    LinearLayout ll_1;
+    @InjectView(R.id.ll_2)
+    LinearLayout ll_2;
+    @InjectView(R.id.ll_3)
+    LinearLayout ll_3;
+    @InjectView(R.id.ll_4)
+    LinearLayout ll_4;
+    @InjectView(R.id.ll_5)
+    LinearLayout ll_5;
+    @InjectView(R.id.ll_6)
+    LinearLayout ll_6;
+    @InjectView(R.id.ll_7)
+    LinearLayout ll_7;
+    @InjectView(R.id.ll_8)
+    LinearLayout ll_8;
+    @InjectView(R.id.ll_9)
+    LinearLayout ll_9;
+    @InjectView(R.id.ll_10)
+    LinearLayout ll_10;
+    @InjectView(R.id.ll_11)
+    LinearLayout ll_11;
+
 
     private ParseStringProtocol protocolEditName;
     private IResponseCallback<DataSourceModel<String>> callbackEditName;
@@ -77,12 +100,10 @@ public class ActivityUserInfo extends BaseSwipeBackCompatActivity implements Vie
     protected void initView() {
         super.initView();
         tv_title.setText("我的信息");
-        tv_right.setVisibility(View.VISIBLE);
-        tv_right.setText("保存");
-        et_name.setText(userModel.getNickname());
-        if (!TextUtils.isEmpty(userModel.getHead_img())) {
-            ImageFactory.displayImage(userModel.getHead_img(), iv_avatar, R.mipmap.photo, R.mipmap.photo);
-        }
+        tv_name.setText("ssss");
+//        if (!TextUtils.isEmpty(userModel.getHead_img())) {
+//            ImageFactory.displayImage(userModel.getHead_img(), iv_avatar, R.mipmap.photo, R.mipmap.photo);
+//        }
     }
 
     @Override
@@ -175,7 +196,7 @@ public class ActivityUserInfo extends BaseSwipeBackCompatActivity implements Vie
     }
 
 
-    @OnClick({R.id.tv_right, R.id.btn_back, R.id.iv_avatar})
+    @OnClick({R.id.btn_back, R.id.iv_avatar, R.id.ll_1, R.id.ll_2, R.id.ll_3, R.id.ll_4, R.id.ll_5, R.id.ll_6, R.id.ll_7, R.id.ll_8, R.id.ll_9, R.id.ll_10, R.id.ll_11})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -184,16 +205,56 @@ public class ActivityUserInfo extends BaseSwipeBackCompatActivity implements Vie
                 finish();
                 break;
             case R.id.tv_right:
-                if (!userModel.getNickname().equals(et_name.getText().toString())) {
-                    userNameTmp = et_name.getText().toString();
-                    Map<String, String> map = new HashMap<>();
-                    map.put("token", userModel.getToken());
-                    map.put("nickname", et_name.getText().toString());
-                    protocolEditName.postData(map, callbackEditName);
-                }
-                break;
             case R.id.iv_avatar:
                 selectPhotoUtils.ShowPop1(btn_back);
+                break;
+
+            case R.id.ll_4:
+                Bundle bundle4 = new Bundle();
+                bundle4.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityBasicInfo.class, bundle4);
+                break;
+
+            case R.id.ll_5:
+                Bundle bundle5 = new Bundle();
+                bundle5.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityLanguageList.class, bundle5);
+                break;
+
+            case R.id.ll_6:
+                Bundle bundle6 = new Bundle();
+                bundle6.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivitySkillList.class, bundle6);
+                break;
+
+            case R.id.ll_7:
+                Bundle bundle7 = new Bundle();
+                bundle7.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityIndustryList.class, bundle7);
+                break;
+
+            case R.id.ll_8:
+                Bundle bundle8 = new Bundle();
+                bundle8.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityCertifiList.class, bundle8);
+                break;
+
+            case R.id.ll_9:
+                Bundle bundle9 = new Bundle();
+                bundle9.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityBasicTagList.class, bundle9);
+                break;
+
+            case R.id.ll_10:
+                Bundle bundle10 = new Bundle();
+                bundle10.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityBasicInfo.class, bundle10);
+                break;
+
+            case R.id.ll_11:
+                Bundle bundle11 = new Bundle();
+                bundle11.putInt("type", VisibleEnum.EDIT.getCode());
+                startActivity(this, ActivityBasicInfo.class, bundle11);
                 break;
         }
     }

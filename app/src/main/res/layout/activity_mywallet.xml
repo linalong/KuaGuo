@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray14"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/activity_title"
+        layout="@layout/include_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_verify"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_wallet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/weikaitong"
+                android:textColor="@color/black8"
+                android:textSize="@dimen/textsize_3" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_blue_hollow_normal"
+                android:gravity="center"
+                android:text="@string/lijikaitong"
+                android:textColor="@color/blue1"
+                android:textSize="@dimen/textsize_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_mail" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/zhukaitong"
+                android:textColor="@color/black8"
+                android:textSize="@dimen/textsize_3" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_blue_hollow_normal"
+                android:gravity="center"
+                android:text="@string/lijirenzheng"
+                android:textColor="@color/blue1"
+                android:textSize="@dimen/textsize_3" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

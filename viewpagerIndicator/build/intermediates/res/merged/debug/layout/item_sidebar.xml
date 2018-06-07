@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
 
-        <com.black.mycommon.view.SelectableRoundedImageView
+        <com.heizi.mycommon.view.SelectableRoundedImageView
             android:id="@+id/iv_photo"
             android:layout_width="45dp"
             android:layout_height="45dp"

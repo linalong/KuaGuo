@@ -1,79 +1,232 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white"
+    android:baselineAligned="false"
     android:orientation="vertical">
 
-    <include layout="@layout/include_title" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_login" />
 
-    <EditText
-        android:id="@+id/et_name"
-        style="@style/et_style_login"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@mipmap/iv_phone2"
-        android:drawablePadding="20dp"
-        android:hint="请输入手机号"
-        android:inputType="number"
-        android:maxLength="30"
-        android:paddingBottom="5dp"
-        android:paddingLeft="10dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
-    <EditText
-        android:id="@+id/et_pwd"
-        style="@style/et_style_login"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-        android:drawableLeft="@mipmap/iv_suo"
-        android:drawablePadding="20dp"
-        android:hint="请输入登录密码"
-        android:inputType="textPassword"
-        android:maxLength="20"
-        android:paddingLeft="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/back_white" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp"
+                    android:text="@string/register_ok"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_4" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/logo_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/chanpinjieshao"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_3" />
+
+
+            <EditText
+                android:id="@+id/et_name"
+                style="@style/et_style_login"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="70dp"
+                android:drawableLeft="@mipmap/ico_user"
+                android:drawablePadding="10dp"
+                android:hint="@string/qingshuruzhanghuming"
+                android:inputType="number"
+                android:maxLength="30"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                style="@style/et_style_login"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@mipmap/ico_password"
+                android:drawablePadding="10dp"
+                android:hint="@string/qingshurudenglumima"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:paddingLeft="10dp" />
+
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_common_bg"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/lijidenglu"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_3" />
+
+            <TextView
+                android:id="@+id/tv_forget_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/wangjimima"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_3" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray13"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_forget_pwd"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="忘记密码?"
-            android:textColor="@color/gray1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/kuaijiedenglu"
+            android:textColor="@color/blue8"
             android:textSize="@dimen/textsize_3" />
 
-        <TextView
-            android:id="@+id/tv_register"
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue1"
+            android:src="@mipmap/ico_wechat" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="快速注册"
-            android:textColor="@color/red"
-            android:textSize="@dimen/textsize_3" />
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white_cornor"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:src="@mipmap/ico_facebook" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_wechat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white_cornor"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:src="@mipmap/ico_wechat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/iv_twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white_cornor"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:src="@mipmap/ico_twitter" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_whatsapp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white_cornor"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:src="@mipmap/ico_whatsapp" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/btn_common_bg"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:text="确    定"
-        android:textColor="@color/white"
-        android:textSize="@dimen/textsize_4" />
-
-</LinearLayout>
+</RelativeLayout>
